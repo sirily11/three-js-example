@@ -13,7 +13,7 @@ const Model = () => {
 
   return (
     <>
-      <primitive object={gltf.scene} scale={2} />
+      <primitive object={gltf.scene} scale={6} />
     </>
   );
 };
@@ -24,7 +24,13 @@ const Home: NextPage = () => {
       <Canvas camera={{ position: [0, 10, 5] }}>
         <Suspense fallback={null}>
           <Model />
-          <OrbitControls autoRotate autoRotateSpeed={1} zoom0={40} />
+          <OrbitControls
+            autoRotate
+            autoRotateSpeed={1}
+            enableRotate={false}
+            enablePan={false}
+            enableZoom={false}
+          />
           <ambientLight intensity={0.5} />
           <Stars />
         </Suspense>
